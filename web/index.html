@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Ring Try-On</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- MediaPipe Tasks Vision -->
+  <script type="module" src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>RingAR</h1>
+      <p>Try on the ring using your webcam</p>
+    </header>
+
+    <div class="main-content">
+      <div id="video-container" class="video-container">
+        <!-- Hidden video element -->
+        <video id="webcam" autoplay playsinline></video>
+        <!-- Canvas for drawing output -->
+        <canvas id="output_canvas"></canvas>
+        
+        <div id="loading" class="loading">Loading AR Experience...</div>
+        
+        <!-- The AR images -->
+        <img id="ring-image" src="ring.png" alt="Ring" style="display: none;">
+        <img id="neckless-image" src="neckless.png" alt="Necklace" style="display: none;">
+      </div>
+      
+      <div class="mode-selector">
+        <button id="mode-ring" class="mode-btn active">Ring</button>
+        <button id="mode-neckless" class="mode-btn">Necklace</button>
+      </div>
+      
+      <div class="controls">
+        <button id="webcamButton" class="mdc-button mdc-button--raised" disabled>
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">ENABLE WEBCAM</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
